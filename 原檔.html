@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 洛杉磯 & 拉斯維加斯 旅遊計劃書</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .header-bg {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        .card-shadow {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 1.25rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #e5e7eb;
+            z-index: 0;
+        }
+
+        /* Toggle Switch Styles */
+        .tab-btn {
+            transition: all 0.2s;
+        }
+
+        .tab-active {
+            background-color: #2c3e50;
+            color: white;
+            border-color: #2c3e50;
+        }
+
+        .tab-inactive {
+            background-color: white;
+            color: #666;
+            border-color: #ddd;
+        }
+
+        .tab-inactive:hover {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="header-bg py-10 px-4 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">2026 美西旅遊計劃書</h1>
+        <p class="text-lg opacity-80 mb-4">Los Angeles & Las Vegas Travel Proposal</p>
+        <div class="inline-flex items-center bg-white/10 px-4 py-1 rounded text-sm">
+            <i class="far fa-calendar-alt mr-2"></i>日期：2026/04/02 - 04/12 (11天10夜)
+        </div>
+    </header>
+
+    <!-- Plan Toggle Controls -->
+    <div class="sticky top-0 z-50 bg-white border-b shadow-sm py-4">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <button onclick="switchPlan('A')" id="btn-A"
+                    class="tab-btn tab-active w-full sm:w-auto px-8 py-2 rounded-md font-bold border flex items-center justify-center">
+                    <i class="fas fa-plane mr-2"></i> 方案 A：飛機 + 跟團
+                </button>
+                <button onclick="switchPlan('B')" id="btn-B"
+                    class="tab-btn tab-inactive w-full sm:w-auto px-8 py-2 rounded-md font-bold border flex items-center justify-center">
+                    <i class="fas fa-car mr-2"></i> 方案 B：全程自駕
+                </button>
+            </div>
+        </div>
+        </style>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+
+        <!-- Plan Description -->
+        <div id="desc-A" class="bg-white p-5 rounded-lg card-shadow mb-8 border-l-4 border-blue-600">
+            <h3 class="font-bold text-gray-800 mb-1">方案 A 概述 (推薦)</h3>
+            <p class="text-sm text-gray-600">利用國內線班機往返賭城，大峽谷行程參加當地 2 日團。優點為節省體力、無需支付異地還車費與賭城停車費。</p>
+        </div>
+        <div id="desc-B" class="hidden bg-white p-5 rounded-lg card-shadow mb-8 border-l-4 border-green-600">
+            <h3 class="font-bold text-gray-800 mb-1">方案 B 概述</h3>
+            <p class="text-sm text-gray-600">全程租車自駕。優點為行程彈性高、行李移動方便；缺點為需長途駕駛 (約 1,000 公里) 及支付較高停車成本。</p>
+        </div>
+
+        <div class="relative space-y-6">
+            <div class="timeline-line hidden md:block"></div>
+
+            <!-- Day 1 -->
+            <div class="relative pl-0 md:pl-12">
+                <div
+                    class="md:absolute left-0 top-2 w-10 h-10 bg-gray-700 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
+                    1</div>
+                <div class="bg-white rounded-lg p-5 card-shadow border-l-4 border-gray-600">
+                    <div class="flex justify-between items-baseline">
+                        <span class="text-sm font-bold text-gray-500">Day 1 • 4/2 (四)</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">住宿：LAX 機場飯店</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-gray-800 mt-1">抵達洛杉磯</h2>
+                    <ul class="mt-3 text-sm text-gray-600 space-y-2">
+                        <li><strong>20:45</strong> 抵達 LAX 機場。</li>
+                        <li><strong>交通：</strong> 搭乘飯店接駁車 (Shuttle) 前往飯店。本日不租車。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PLAN A Content -->
+            <div id="plan-a-content">
+                <!-- Day 2 (Fly) -->
+                <div class="relative pl-0 md:pl-12">
+                    <div
+                        class="md:absolute left-0 top-2 w-10 h-10 bg-blue-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
+                        2</div>
+                    <div class="bg-white rounded-lg p-5 card-shadow border-l-4 border-blue-600">
+                        <span class="text-sm font-bold text-blue-600">Day 2 • 4/3 (五)</span>
+                        <h2 class="text-xl font-bold text-gray-800 mt-1">飛往拉斯維加斯</h2>
+                        <ul class="mt-3 text-sm text-gray-600 space-y-2">
+                            <li><i class="fas fa-plane text-blue-500 w-5"></i> <strong>上午：</strong> 推薦搭乘
+                                <strong>Southwest (西南航空)</strong> 09:00 - 10:30 航班。</li>
+                            <li class="pl-7 text-xs text-blue-600 bg-blue-50 py-1 rounded">💡 <strong>Tip:</strong>
+                                Southwest 提供每人 2 件免費託運行李，最適合長途旅客。</li>
+                            <li><i class="fas fa-car text-blue-500 w-5"></i> <strong>交通：</strong> 抵達後搭乘 Uber 前往飯店。</li>
+                            <li><i class="fas fa-map-marker-alt text-blue-500 w-5"></i> <strong>行程：</strong> 賭城大道南段
+                                (MGM, New York New York)。</li>
+                            <li><i class="fas fa-ticket-alt text-yellow-600 w-5"></i> <strong>晚上：</strong> 太陽馬戲團 "O"
+                                Show。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 3 (Vegas Free) -->
+                <div class="relative pl-0 md:pl-12 mt-6">
+                    <div
+                        class="md:absolute left-0 top-2 w-10 h-10 bg-purple-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
+                        3</div>
+                    <div class="bg-white rounded-lg p-5 card-shadow border-l-4 border-purple-600">
+                        <span class="text-sm font-bold text-purple-600">Day 3 • 4/4 (六)</span>
+                        <h2 class="text-xl font-bold text-gray-800 mt-1">拉斯維加斯：市區自由行</h2>
+                        <p class="text-sm text-gray-500 mt-2">本日為週六，安排市區觀光。</p>
+                        <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+                            <div class="bg-gray-50 p-3 rounded"><strong>景點：</strong> The Sphere (球體建築)、威尼斯人 (The
+                                Venetian)。</div>
+                            <div class="bg-gray-50 p-3 rounded"><strong>體驗：</strong> 可口可樂博物館、賭場體驗。</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 4-5 (Tour) -->
+                <div class="relative pl-0 md:pl-12 mt-6">
+                    <div
+                        class="md:absolute left-0 top-2 w-10 h-10 bg-orange-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
+                        <i class="fas fa-bus"></i></div>
+                    <div class="bg-white rounded-lg p-5 card-shadow border-l-4 border-orange-500">
+                        <span class="text-sm font-bold text-orange-600">Day 4-5 • 4/5(日) - 4/6(一)</span>
+                        <h2 class="text-xl font-bold text-gray-800 mt-1">大峽谷 2 日遊 (跟團)</h2>
+                        <p class="text-xs text-gray-400 mt-1">旅行社：KKday / MaxTour</p>
+                        <div class="mt-4 space-y-4">
+                            <div class="border-l-2 border-orange-200 pl-3">
+                                <strong class="block text-gray-700">Day 4: 大峽谷南緣</strong>
+                                <p class="text-sm text-gray-600">飯店接送 → 胡佛水壩 → 66號公路 → 大峽谷國家公園 → 夜宿 Page。</p>
+                            </div>
+                            <div class="border-l-2 border-orange-200 pl-3">
+                                <strong class="block text-gray-700">Day 5: 羚羊谷與馬蹄灣</strong>
+                                <p class="text-sm text-gray-600">馬蹄灣 → 下羚羊谷導覽 → 返回拉斯維加斯 (約 19:00 抵達)。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 6 (Fly Back) -->
+                <div class="relative pl-0 md:pl-12 mt-6">
+                    <div
+                        class="md:absolute left-0 top-2 w-10 h-10 bg-blue-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
+                        6</div>
+                    <div class="bg-white rounded-lg p-5 card-shadow border-l-4 border-blue-600">
+                        <span class="text-sm font-bold text-blue-600">Day 6 • 4/7 (二)</span>
+                        <h2 class="text-xl font-bold text-gray-800 mt-1">飛回洛杉磯</h2>
+                        <ul class="mt-3 text-sm text-gray-600 space-y-2">
+                            <li><i class="fas fa-plane text-blue-500 w-5"></i> <strong>上午：</strong> 搭早班機 LAS → LAX。</li>
+                            <li><i class="fas fa-key text-blue-500 w-5"></i> <strong>租車：</strong> 於 LAX 機場取車 (開始租車)。
+                            </li>
+                            <li><i class="fas fa-city text-blue-500 w-5"></i> <strong>下午：</strong> 洛杉磯市中心觀光 (Central
+                                Market, Angels Flight)。</li>
+                            <li><i class="fas fa-star text-blue-500 w-5"></i> <strong>晚上：</strong> Griffith Observatory
+                                天文台夜景。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLAN B Content -->
+            <div id="plan-b-content" class="hidden">
+                <!-- Day 2 (Drive) -->
+                <div class="relative pl-0 md:pl-12">
+                    <div
+                        class="md:absolute left-0 top-2 w-10 h-10 bg-green-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
+                        2</div>
+                    <div class="bg-white rounded-lg p-5 card-shadow border-l-4 border-green-600">
+                        <span class="text-sm font-bold text-green-600">Day 2 • 4/3 (五)</span>
+                        <h2 class="text-xl font-bold text-gray-800 mt-1">自駕前往拉斯維加斯</h2>
+                        <ul class="mt-3 text-sm text-gray-600 space-y-2">
+                            <li><i class="fas fa-key text-green-500 w-5"></i> <strong>09:00：</strong> LAX 機場取車 (全程租車)。
+                            </li>
+                            <li><i class="fas fa-road text-green-500 w-5"></i> <strong>車程：</strong> 約 4.5 小時 (中停 Barstow
+                                休息)。</li>
+                            <li><i class="fas fa-parking text-green-500 w-5"></i> <strong>抵達：</strong> 飯店 Check-in
+                                (需付停車費)。</li>
+                            <li><i class="fas fa-ticket-alt text-yellow-600 w-5"></i> <strong>晚上：</strong> 太陽馬戲團 "O"
+                                Show。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 3 (Vegas Free) -->
+                <div class="relative pl-0 md:pl-12 mt-6">
+                    <div
+                        class="md:absolute left-0 top-2 w-10 h-10 bg-purple-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
+                        3</div>
+                    <div class="bg-white rounded-lg p-5 card-shadow border-l-4 border-purple-600">
+                        <span class="text-sm font-bold text-purple-600">Day 3 • 4/4 (六)</span>
+                        <h2 class="text-xl font-bold text-gray-800 mt-1">拉斯維加斯：市區自駕</h2>
+                        <p class="text-sm text-gray-500 mt-2">可利用車輛前往較遠的景點。</p>
+                        <div class="mt-3 text-sm text-gray-600">
+                            <strong>建議行程：</strong> 賭城大道觀光、前往 Outlet 採購 (North Premium Outlets)。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 4-5 (Self Drive Canyon) -->
+                <div class="relative pl-0 md:pl-12 mt-6">
+                    <div
+                        class="md:absolute left-0 top-2 w-10 h-10 bg-green-700 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
+                        <i class="fas fa-steering-wheel"></i></div>
+                    <div class="bg-white rounded-lg p-5 card-shadow border-l-4 border-green-700">
+                        <span class="text-sm font-bold text-green-700">Day 4-5 • 4/5(日) - 4/6(一)</span>
+                        <h2 class="text-xl font-bold text-gray-800 mt-1">大峽谷 2 日自駕</h2>
+                        <div class="mt-4 space-y-4">
+                            <div class="border-l-2 border-green-200 pl-3">
+                                <strong class="block text-gray-700">Day 4: 往南緣推進 (車程 4.5hr)</strong>
+                                <p class="text-sm text-gray-600">Vegas → 胡佛水壩 → 66號公路 → 大峽谷南緣 → 宿 Tusayan 或 Williams。
+                                </p>
+                            </div>
+                            <div class="border-l-2 border-green-200 pl-3">
+                                <strong class="block text-gray-700">Day 5: 羚羊谷折返 (車程 6hr+)</strong>
+                                <p class="text-sm text-gray-600">前往 Page → 馬蹄灣 → 下羚羊谷 (需預約 12:30 場次) → 開車返回 Vegas 住宿。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 6 (Drive Back) -->
+                <div class="relative pl-0 md:pl-12 mt-6">
+                    <div
+                        class="md:absolute left-0 top-2 w-10 h-10 bg-green-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
+                        6</div>
+                    <div class="bg-white rounded-lg p-5 card-shadow border-l-4 border-green-600">
+                        <span class="text-sm font-bold text-green-600">Day 6 • 4/7 (二)</span>
+                        <h2 class="text-xl font-bold text-gray-800 mt-1">開車回洛杉磯</h2>
+                        <ul class="mt-3 text-sm text-gray-600 space-y-2">
+                            <li><i class="fas fa-road text-green-500 w-5"></i> <strong>上午：</strong> 離開 Vegas，開車返回 LA (約
+                                4.5 小時)。</li>
+                            <li><i class="fas fa-camera text-purple-500 w-5"></i> <strong>中停：</strong> Seven Magic
+                                Mountains (七彩巨石)。</li>
+                            <li><i class="fas fa-city text-blue-500 w-5"></i> <strong>下午：</strong> 抵達洛杉磯，接續市區行程。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 7-11 (Common) -->
+            <div class="relative pl-0 md:pl-12 mt-6">
+                <div
+                    class="md:absolute left-0 top-2 w-10 h-10 bg-gray-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
+                    <i class="fas fa-map"></i></div>
+                <div class="bg-white rounded-lg p-5 card-shadow border-l-4 border-gray-500">
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">Day 7 - 11 洛杉磯行程 (雙方案相同)</h2>
+                    <div class="space-y-4">
+                        <div class="flex">
+                            <div class="w-20 font-bold text-blue-600 text-sm shrink-0">4/8 (三)</div>
+                            <div class="text-sm"><strong>好萊塢環球影城：</strong> 全日遊 (瑪利歐世界、哈利波特)。</div>
+                        </div>
+                        <div class="flex">
+                            <div class="w-20 font-bold text-red-600 text-sm shrink-0">4/9 (四)</div>
+                            <div class="text-sm">
+                                <strong>高空跳傘 (Skydiving)：</strong> 上午前往 Camarillo 跳傘 (Skydive Coastal California)。<br>
+                                <strong>下午：</strong> Santa Monica Pier & Venice Beach 放鬆壓驚。
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="w-20 font-bold text-blue-600 text-sm shrink-0">4/10 (五)</div>
+                            <div class="text-sm"><strong>藝文名流：</strong> Getty Center, Beverly Hills & LACMA。</div>
+                        </div>
+                        <div class="flex">
+                            <div class="w-20 font-bold text-blue-600 text-sm shrink-0">4/11 (六)</div>
+                            <div class="text-sm"><strong>好萊塢區：</strong> Hollywood Sign, 星光大道, 採購伴手禮。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 11: NBA -->
+            <div class="relative pl-0 md:pl-12 mt-6">
+                <div
+                    class="md:absolute left-0 top-2 w-10 h-10 bg-yellow-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
+                    <i class="fas fa-basketball-ball"></i></div>
+                <div class="bg-white rounded-lg p-5 card-shadow border-l-4 border-yellow-500">
+                    <span class="text-sm font-bold text-yellow-600">Day 11 • 4/12 (日)</span>
+                    <h2 class="text-xl font-bold text-gray-800 mt-1">NBA 賽季最終戰 & 賦歸</h2>
+                    <div class="mt-4 bg-gray-50 p-4 rounded border border-gray-200 text-center">
+                        <h3 class="font-bold text-lg text-purple-700">LAKERS vs JAZZ</h3>
+                        <p class="text-xs text-gray-500">Crypto.com Arena</p>
+                    </div>
+                    <ul class="mt-4 text-sm text-gray-600 space-y-2">
+                        <li><strong>11:00</strong> 退房，行李上車。享用悠閒早午餐。</li>
+                        <li><strong>13:00</strong> 市區最後巡禮 (The Last Bookstore / Grand Central Market)。</li>
+                        <li><strong>17:30</strong> NBA 觀賽 (預計 20:00 結束)。</li>
+                        <li><strong>20:30</strong> 賽後直接前往機場還車 (晚餐建議買 In-N-Out 外帶)。</li>
+                        <li><strong>21:30</strong> 抵達航廈 Check-in。</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div> <!-- End Timeline -->
+
+        <footer class="mt-12 text-center text-gray-400 text-xs pb-6">
+            <p>2026 美西旅遊計劃書</p>
+        </footer>
+
+    </main>
+
+    <script>
+        function switchPlan(plan) {
+            const btnA = document.getElementById('btn-A');
+            const btnB = document.getElementById('btn-B');
+            const contentA = document.getElementById('plan-a-content');
+            const contentB = document.getElementById('plan-b-content');
+            const descA = document.getElementById('desc-A');
+            const descB = document.getElementById('desc-B');
+
+            if (plan === 'A') {
+                btnA.classList.replace('tab-inactive', 'tab-active');
+                btnB.classList.replace('tab-active', 'tab-inactive');
+                contentA.classList.remove('hidden');
+                contentB.classList.add('hidden');
+                descA.classList.remove('hidden');
+                descB.classList.add('hidden');
+            } else {
+                btnB.classList.replace('tab-inactive', 'tab-active');
+                btnA.classList.replace('tab-active', 'tab-inactive');
+                contentB.classList.remove('hidden');
+                contentA.classList.add('hidden');
+                descB.classList.remove('hidden');
+                descA.classList.add('hidden');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
