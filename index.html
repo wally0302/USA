@@ -17,6 +17,21 @@
       color: #333;
     }
 
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
     .header-bg {
       background-color: #2c3e50;
       color: white;
@@ -264,6 +279,10 @@
         background-color: #f1f5f9;
       }
 
+      .container {
+        padding: 0 16px;
+      }
+
       .header-bg {
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
@@ -334,19 +353,21 @@
 
 <body>
   <header class="header-bg py-10 px-4 text-center">
-    <h1 class="text-3xl md:text-4xl font-bold mb-2">2026 美西旅遊行程</h1>
-    <p class="text-lg opacity-80 mb-4">Los Angeles &amp; Las Vegas Travel Plan</p>
-    <div class="flex flex-col items-center gap-3">
-      <div class="inline-flex items-center bg-white/10 px-4 py-1 rounded text-sm">
-        <i class="far fa-calendar-alt mr-2"></i>日期：2026/04/02 - 04/12 (11天10夜)
+    <div class="container">
+      <h1 class="text-3xl md:text-4xl font-bold mb-2">2026 美西旅遊行程</h1>
+      <p class="text-lg opacity-80 mb-4">Los Angeles &amp; Las Vegas Travel Plan</p>
+      <div class="flex flex-col items-center gap-3">
+        <div class="inline-flex items-center bg-white/10 px-4 py-1 rounded text-sm">
+          <i class="far fa-calendar-alt mr-2"></i>日期：2026/04/02 - 04/12 (11天10夜)
+        </div>
+        <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false">
+          <i class="fas fa-moon"></i> 夜間模式
+        </button>
       </div>
-      <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false">
-        <i class="fas fa-moon"></i> 夜間模式
-      </button>
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 py-8">
+  <main class="container py-8">
     <section class="booklet-shell">
       <div class="relative z-10">
         <div class="summary-card mb-6">
