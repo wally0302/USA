@@ -22,6 +22,51 @@
       color: white;
     }
 
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #64748b;
+      margin-top: 0.35rem;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: #2563eb;
+      color: #fff;
+      box-shadow: 0 12px 20px rgba(37, 99, 235, 0.25);
+      text-decoration: none;
+    }
+
+    .cta-button.secondary {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      color: #fff;
+      box-shadow: none;
+    }
+
+    .cta-button.dark {
+      background: #0f172a;
+      color: #fff;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 24px rgba(37, 99, 235, 0.3);
+    }
+
     .card-shadow {
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       border: 1px solid #e5e7eb;
@@ -208,6 +253,14 @@
       border-color: rgba(148, 163, 184, 0.2);
     }
 
+    body.theme-dark .section-title {
+      color: #f8fafc;
+    }
+
+    body.theme-dark .section-subtitle {
+      color: #cbd5f5;
+    }
+
     body.theme-dark .summary-card,
     body.theme-dark .card-shadow {
       background: #111827;
@@ -262,6 +315,10 @@
     @media (max-width: 640px) {
       body {
         background-color: #f1f5f9;
+      }
+
+      .cta-button {
+        width: 100%;
       }
 
       .header-bg {
@@ -333,9 +390,34 @@
 </head>
 
 <body>
+  <nav class="bg-white/80 backdrop-blur border-b border-slate-200 sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+      <a class="font-bold text-slate-800 text-lg flex items-center gap-2" href="#">
+        <i class="fas fa-route text-blue-500"></i>
+        West Coast Trip 2026
+      </a>
+      <div class="flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-600">
+        <a href="#overview" class="hover:text-blue-600">行程概覽</a>
+        <a href="#itinerary" class="hover:text-blue-600">每日行程</a>
+        <a href="#highlights" class="hover:text-blue-600">今日亮點</a>
+        <a href="#cta" class="hover:text-blue-600">立即規劃</a>
+      </div>
+      <a class="cta-button dark" href="#cta">快速開始</a>
+    </div>
+  </nav>
   <header class="header-bg py-10 px-4 text-center">
     <h1 class="text-3xl md:text-4xl font-bold mb-2">2026 美西旅遊行程</h1>
     <p class="text-lg opacity-80 mb-4">Los Angeles &amp; Las Vegas Travel Plan</p>
+    <div class="flex flex-col items-center gap-3 mb-4 sm:flex-row sm:justify-center">
+      <a class="cta-button" href="#itinerary">
+        <i class="fas fa-map"></i>
+        查看完整行程
+      </a>
+      <a class="cta-button secondary" href="#cta">
+        <i class="fas fa-file-download"></i>
+        下載旅行清單
+      </a>
+    </div>
     <div class="flex flex-col items-center gap-3">
       <div class="inline-flex items-center bg-white/10 px-4 py-1 rounded text-sm">
         <i class="far fa-calendar-alt mr-2"></i>日期：2026/04/02 - 04/12 (11天10夜)
@@ -347,9 +429,13 @@
   </header>
 
   <main class="max-w-4xl mx-auto px-4 py-8">
-    <section class="booklet-shell">
+    <section class="booklet-shell" id="overview">
       <div class="relative z-10">
-        <div class="summary-card mb-6">
+        <div class="mb-6">
+          <h2 class="section-title">行程概覽</h2>
+          <p class="section-subtitle">快速掌握旅程節奏、主要目的地與交通安排。</p>
+        </div>
+        <div class="summary-card mb-6" id="highlights">
           <p class="text-xs uppercase tracking-[0.2em] text-blue-500 font-semibold">Today Highlight</p>
           <h2 class="text-xl font-bold text-slate-800 mt-1">今日重點：抵達洛杉磯</h2>
           <p class="text-sm text-slate-500 mt-1">先掌握今日行程，讓旅途中快速確認移動與住宿。</p>
@@ -360,32 +446,32 @@
           </div>
         </div>
 
-        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
-          <div>
-            <p class="text-xs uppercase tracking-[0.2em] text-blue-500 font-semibold">Travel Booklet</p>
-            <h2 class="text-2xl font-bold text-slate-800">旅程章節導覽</h2>
-            <p class="text-sm text-slate-500 mt-1">依天數快速切換，像翻閱精緻旅遊手冊。</p>
-          </div>
-          <div class="tab-bar-wrapper">
-            <div class="tab-bar" role="tablist" aria-label="行程天數">
-              <button class="tab-button active" type="button" data-tab="all">全部</button>
-              <button class="tab-button" type="button" data-tab="day1">Day 1</button>
-              <button class="tab-button" type="button" data-tab="day2">Day 2</button>
-              <button class="tab-button" type="button" data-tab="day3">Day 3</button>
-              <button class="tab-button" type="button" data-tab="day4">Day 4</button>
-              <button class="tab-button" type="button" data-tab="day5">Day 5</button>
-              <button class="tab-button" type="button" data-tab="day6">Day 6</button>
-              <button class="tab-button" type="button" data-tab="day7">Day 7</button>
-              <button class="tab-button" type="button" data-tab="day8">Day 8</button>
-              <button class="tab-button" type="button" data-tab="day9">Day 9</button>
-              <button class="tab-button" type="button" data-tab="day10">Day 10</button>
-              <button class="tab-button" type="button" data-tab="day11">Day 11</button>
+        <section id="itinerary">
+          <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
+            <div>
+              <h2 class="section-title">每日行程</h2>
+              <p class="section-subtitle">依天數快速切換，像翻閱精緻旅遊手冊。</p>
+            </div>
+            <div class="tab-bar-wrapper">
+              <div class="tab-bar" role="tablist" aria-label="行程天數">
+                <button class="tab-button active" type="button" data-tab="all">全部</button>
+                <button class="tab-button" type="button" data-tab="day1">Day 1</button>
+                <button class="tab-button" type="button" data-tab="day2">Day 2</button>
+                <button class="tab-button" type="button" data-tab="day3">Day 3</button>
+                <button class="tab-button" type="button" data-tab="day4">Day 4</button>
+                <button class="tab-button" type="button" data-tab="day5">Day 5</button>
+                <button class="tab-button" type="button" data-tab="day6">Day 6</button>
+                <button class="tab-button" type="button" data-tab="day7">Day 7</button>
+                <button class="tab-button" type="button" data-tab="day8">Day 8</button>
+                <button class="tab-button" type="button" data-tab="day9">Day 9</button>
+                <button class="tab-button" type="button" data-tab="day10">Day 10</button>
+                <button class="tab-button" type="button" data-tab="day11">Day 11</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="relative space-y-6">
-      <div class="timeline-line hidden md:block"></div>
+          <div class="relative space-y-6">
+            <div class="timeline-line hidden md:block"></div>
 
       <div class="relative pl-0 md:pl-12 day-card" data-days="day1">
         <div
@@ -679,7 +765,17 @@
           </a>
         </div>
       </div>
-        </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="cta" class="mt-10 text-center">
+      <h2 class="section-title">開始規劃你的 2026 美西旅程</h2>
+      <p class="section-subtitle">收藏此行程、同步到行事曆，或分享給同行旅伴。</p>
+      <div class="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a class="cta-button" href="#overview"><i class="fas fa-book-open"></i> 收藏行程手冊</a>
+        <a class="cta-button secondary" href="#overview"><i class="fas fa-share-alt"></i> 分享給旅伴</a>
       </div>
     </section>
 
