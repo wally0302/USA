@@ -319,6 +319,66 @@
       }
     }
 
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+
+      .tab-bar {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .day-card .card-shadow {
+        padding: 1.1rem;
+      }
+
+      .tab-button,
+      .map-button,
+      .theme-toggle {
+        font-size: 0.9rem;
+      }
+
+      .summary-chip,
+      .info-tag,
+      .day-card p,
+      .day-card ul,
+      .day-card li {
+        font-size: 0.9rem;
+        line-height: 1.55rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-bg h1 {
+        font-size: 1.6rem;
+      }
+
+      .tab-bar {
+        gap: 0.35rem;
+      }
+
+      .tab-button {
+        padding: 0.5rem 0.85rem;
+      }
+
+      .booklet-shell {
+        padding: 1.25rem 0.9rem;
+      }
+
+      .summary-card {
+        padding: 0.9rem;
+      }
+
+      .day-card h3 {
+        font-size: 1.1rem;
+      }
+    }
+
     @media (max-width: 640px) {
       body {
         background-color: var(--color-surface-alt);
@@ -368,7 +428,7 @@
       .btn-tab {
         flex: 0 0 auto;
         white-space: nowrap;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         padding: 0.45rem 0.85rem;
       }
 
