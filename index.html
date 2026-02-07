@@ -2,864 +2,629 @@
 <html lang="zh-TW">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2026 美西旅遊行程（洛杉磯 & 拉斯維加斯）</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 美西旅遊手冊｜洛杉磯 & 拉斯維加斯</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sand: '#fff4e8',
+            dune: '#f0d8b7',
+            sea: '#00809d',
+            deep: '#0c2d3a',
+            gold: '#ffb347',
+            mist: '#e6f8ff'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', '"Noto Serif TC"', 'serif'],
+            sans: ['"Source Sans 3"', '"Noto Sans TC"', 'sans-serif']
+          },
+          boxShadow: {
+            card: '0 10px 25px rgba(15, 23, 42, 0.08)',
+            soft: '0 20px 40px rgba(15, 23, 42, 0.12)'
+          }
+        }
+      }
+    };
+  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
-      --font-family-base: 'Noto Sans TC', sans-serif;
-      --color-bg: #f8f9fa;
-      --color-surface: #ffffff;
-      --color-surface-alt: #f1f5f9;
-      --color-text: #1f2937;
-      --color-text-muted: #64748b;
-      --color-primary: #2563eb;
-      --color-primary-strong: #1d4ed8;
-      --color-border: #e2e8f0;
-      --color-header: #2c3e50;
-      --color-on-dark: #ffffff;
-      --color-chip-bg: #f1f5f9;
-      --color-chip-text: #334155;
-      --color-tag-bg: #eef2ff;
-      --color-tag-text: #4338ca;
-      --space-8: 0.5rem;
-      --space-12: 0.75rem;
-      --space-16: 1rem;
-      --space-24: 1.5rem;
-      --space-32: 2rem;
-      --radius-sm: 0.5rem;
-      --radius-md: 1rem;
-      --radius-lg: 1.5rem;
-      --radius-pill: 999px;
-      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.08);
-      --shadow-md: 0 10px 20px rgba(15, 23, 42, 0.12);
-      --shadow-lg: 0 18px 35px rgba(15, 23, 42, 0.12);
+      --hero-glow: radial-gradient(circle at top right, rgba(212, 180, 131, 0.25), transparent 55%),
+        radial-gradient(circle at 15% 30%, rgba(15, 76, 92, 0.2), transparent 50%);
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: var(--font-family-base);
-      background-color: var(--color-bg);
-      color: var(--color-text);
+      font-family: "Source Sans 3", "Noto Sans TC", sans-serif;
+      background: linear-gradient(180deg, #fff4e8 0%, #f4f1ff 45%, #e9f7ff 100%);
     }
 
-    body.theme-dark {
-      --color-bg: #0f172a;
-      --color-surface: #111827;
-      --color-surface-alt: rgba(148, 163, 184, 0.16);
-      --color-text: #e2e8f0;
-      --color-text-muted: #cbd5f5;
-      --color-border: rgba(148, 163, 184, 0.2);
-      --color-header: #111827;
-      --color-chip-bg: rgba(148, 163, 184, 0.12);
-      --color-chip-text: #e2e8f0;
-      --color-tag-bg: rgba(99, 102, 241, 0.2);
-      --color-tag-text: #c7d2fe;
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
-    .text-h1 {
-      font-size: 2rem;
-      line-height: 2.5rem;
-      font-weight: 700;
+    .reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .text-h2 {
-      font-size: 1.5rem;
-      line-height: 2rem;
-      font-weight: 700;
+    .glass {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(12px);
     }
 
-    .text-body {
-      font-size: 1rem;
-      line-height: 1.6rem;
+    .card-shadow {
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
     }
 
-    .text-body-sm {
-      font-size: 0.875rem;
-      line-height: 1.4rem;
+    .hero-mask {
+      background: linear-gradient(180deg, rgba(7, 52, 63, 0.25), rgba(7, 52, 63, 0.65));
     }
 
-    .text-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: var(--color-primary);
+    .pattern-bg {
+      background-image: var(--hero-glow);
     }
 
-    .text-muted {
-      color: var(--color-text-muted);
-    }
-
-    .text-strong {
-      color: var(--color-text);
-    }
-
-    .text-on-dark {
-      color: var(--color-on-dark);
-    }
-
-    .text-on-dark-muted {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    .section-header {
-      padding: var(--space-32) var(--space-16);
-    }
-
-    .header-bg {
-      background-color: var(--color-header);
-      color: var(--color-on-dark);
-    }
-
-    .card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      padding: var(--space-16);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .card-elevated {
-      box-shadow: var(--shadow-md);
-    }
-
-    .card-interactive {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card-interactive:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .timeline-line {
-      position: absolute;
-      left: 1.25rem;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background-color: var(--color-border);
-      z-index: 0;
-    }
-
-    .booklet-shell {
-      background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: var(--space-32) var(--space-24);
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .booklet-shell::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 50%),
-        radial-gradient(circle at 20% 40%, rgba(14, 116, 144, 0.08), transparent 55%);
-      pointer-events: none;
-    }
-
-    .tab-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-8);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-8);
-      padding: var(--space-8) var(--space-16);
-      border-radius: var(--radius-pill);
-      font-size: 0.875rem;
-      font-weight: 600;
-      border: 1px solid transparent;
-      transition: all 0.2s ease;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .btn:focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 2px;
-    }
-
-    .btn-soft {
-      background: var(--color-surface-alt);
-      color: var(--color-text);
-      border-color: var(--color-border);
-    }
-
-    .btn-soft:hover {
-      border-color: #93c5fd;
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: var(--color-primary);
-      color: #fff;
-      box-shadow: var(--shadow-md);
-    }
-
-    .btn-primary:hover {
-      background: var(--color-primary-strong);
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-      background: rgba(255, 255, 255, 0.15);
-      color: var(--color-on-dark);
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    .btn-tab.active {
-      background: var(--color-primary);
-      color: #fff;
-      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
-    }
-
-    .btn-theme {
-      font-size: 0.8rem;
-    }
-
-    .pill-info {
-      padding: var(--space-8) var(--space-16);
-      border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .day-card {
-      animation: fadeInUp 0.45s ease both;
-    }
-
-    .summary-card {
-      padding: var(--space-16);
-    }
-
-    .summary-grid {
+    .notion-list {
       display: grid;
-      gap: var(--space-8);
+      gap: 0.75rem;
     }
 
-    .summary-chip {
-      display: inline-flex;
+    .notion-card {
+      display: flex;
       align-items: center;
-      gap: var(--space-8);
-      padding: 0.35rem 0.6rem;
-      border-radius: var(--radius-pill);
-      background: var(--color-chip-bg);
-      color: var(--color-chip-text);
-      font-size: 0.8rem;
-      font-weight: 600;
+      gap: 0.75rem;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(255, 179, 71, 0.35);
+      border-radius: 16px;
+      padding: 0.75rem 1rem;
+      box-shadow: 0 14px 26px rgba(12, 45, 58, 0.12);
+      color: #475569;
     }
 
-    .summary-chip i {
-      color: var(--color-primary);
+    .notion-card span {
+      flex: 1;
     }
 
-    .info-tag {
-      display: inline-flex;
-      align-items: center;
+    .day-summary {
+      flex-direction: column;
+      align-items: flex-start;
       gap: 0.35rem;
-      padding: 0.2rem 0.5rem;
-      border-radius: var(--radius-pill);
-      background: var(--color-tag-bg);
-      color: var(--color-tag-text);
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
-
-    .day-details {
-      margin-top: var(--space-12);
-      border-top: 1px dashed var(--color-border);
-      padding-top: var(--space-12);
-    }
-
-    .day-details summary {
       cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--color-primary);
-      list-style: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: linear-gradient(135deg, rgba(255, 179, 71, 0.2), rgba(0, 128, 157, 0.2));
+      border: 1px solid rgba(0, 128, 157, 0.25);
     }
 
-    .day-details summary::-webkit-details-marker {
-      display: none;
+    .day-summary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(7, 52, 63, 0.12);
     }
 
-    .map-button {
-      margin-top: var(--space-12);
+    .summary-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: #94a3b8;
     }
 
-    .tab-bar-wrapper {
-      position: static;
-      background: transparent;
-      padding: var(--space-8) 0;
+    .summary-title {
+      font-family: "Playfair Display", "Noto Serif TC", serif;
+      font-size: 1.05rem;
+      color: #0c2d3a;
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .summary-text {
+      color: #64748b;
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 768px) {
-      body {
-        font-size: 16px;
-      }
-
-      .tab-bar {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-      }
-
-      .summary-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .day-card .card-shadow {
-        padding: 1.1rem;
-      }
-
-      .tab-button,
-      .map-button,
-      .theme-toggle {
-        font-size: 0.9rem;
-      }
-
-      .summary-chip,
-      .info-tag,
-      .day-card p,
-      .day-card ul,
-      .day-card li {
-        font-size: 0.9rem;
-        line-height: 1.55rem;
-      }
+    .day-details .notion-card {
+      background: rgba(255, 255, 255, 0.98);
+      border-left: 6px solid #ff8a3d;
     }
 
-    @media (max-width: 480px) {
-      .header-bg h1 {
-        font-size: 1.6rem;
-      }
-
-      .tab-bar {
-        gap: 0.35rem;
-      }
-
-      .tab-button {
-        padding: 0.5rem 0.85rem;
-      }
-
-      .booklet-shell {
-        padding: 1.25rem 0.9rem;
-      }
-
-      .summary-card {
-        padding: 0.9rem;
-      }
-
-      .day-card h3 {
-        font-size: 1.1rem;
-      }
-    }
-
-    @media (max-width: 640px) {
-      body {
-        background-color: var(--color-surface-alt);
-      }
-
-      .header-bg {
-        padding-top: var(--space-32);
-        padding-bottom: var(--space-32);
-      }
-
-      .header-bg h1 {
-        font-size: 1.75rem;
-        line-height: 2.25rem;
-      }
-
-      .header-bg p {
-        font-size: 1rem;
-      }
-
-      .booklet-shell {
-        padding: var(--space-24) var(--space-16);
-        border-radius: 1.25rem;
-      }
-
-      .tab-bar {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 0.35rem;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .tab-bar-wrapper {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        background: linear-gradient(180deg, rgba(248, 250, 252, 0.98), rgba(248, 250, 252, 0.9));
-      }
-
-      body.theme-dark .tab-bar-wrapper {
-        background: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.9));
-      }
-
-      .tab-bar::-webkit-scrollbar {
-        display: none;
-      }
-
-      .btn-tab {
-        flex: 0 0 auto;
-        white-space: nowrap;
-        font-size: 0.9rem;
-        padding: 0.45rem 0.85rem;
-      }
-
-      .day-card .card {
-        padding: var(--space-16);
-        border-radius: var(--radius-md);
-      }
-
-      .day-card h3 {
-        font-size: 1.15rem;
-        line-height: 1.6rem;
-      }
-
-      .day-card p,
-      .day-card ul,
-      .day-card li {
-        font-size: 0.9rem;
-        line-height: 1.5rem;
-      }
+    .day-details .notion-card:nth-child(even) {
+      border-left-color: #00b3a4;
     }
   </style>
 </head>
 
-<body>
-  <header class="header-bg section-header text-center">
-    <h1 class="text-h1 text-on-dark mb-2">2026 美西旅遊行程</h1>
-    <p class="text-body text-on-dark-muted mb-4">Los Angeles &amp; Las Vegas Travel Plan</p>
-    <div class="flex flex-col items-center gap-3">
-      <div class="pill-info inline-flex items-center text-body-sm text-on-dark-muted">
-        <i class="far fa-calendar-alt mr-2"></i>日期：2026/04/02 - 04/12 (11天10夜)
+<body class="bg-sand text-slate-900">
+  <header class="hidden md:block sticky top-0 z-40 bg-sand/80 backdrop-blur border-b border-white/70">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sea text-white">
+          <i class="fa-solid fa-compass"></i>
+        </span>
+        <div>
+          <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Digital Travel Brochure</p>
+          <p class="font-serif text-lg text-deep">2026 美西旅遊手冊</p>
+        </div>
       </div>
-      <button class="btn btn-ghost btn-theme" type="button" id="themeToggle" aria-pressed="false">
-        <i class="fas fa-moon"></i> 夜間模式
-      </button>
+      <nav class="flex items-center gap-4 text-sm font-semibold">
+        <a class="min-h-[44px] px-4 inline-flex items-center rounded-full text-deep hover:text-sea transition" href="#highlights">旅程亮點</a>
+        <a class="min-h-[44px] px-4 inline-flex items-center rounded-full text-deep hover:text-sea transition" href="#spots">精選景點</a>
+        <a class="min-h-[44px] px-4 inline-flex items-center rounded-full text-deep hover:text-sea transition" href="#itinerary">每日章節</a>
+      </nav>
+      <a
+        class="min-h-[44px] min-w-[44px] px-6 inline-flex items-center justify-center rounded-full bg-sea text-white font-semibold shadow-soft hover:bg-deep transition"
+        href="#itinerary">開始閱讀</a>
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 py-8">
-    <section class="booklet-shell">
-      <div class="relative z-10">
-        <div class="card card-elevated summary-card mb-6">
-          <p class="text-label">Today Highlight</p>
-          <h2 class="text-h2 text-strong mt-1">今日重點：抵達洛杉磯</h2>
-          <p class="text-body-sm text-muted mt-1">先掌握今日行程，讓旅途中快速確認移動與住宿。</p>
-          <div class="summary-grid mt-3">
-            <span class="summary-chip"><i class="fas fa-plane"></i> 抵達 LAX</span>
-            <span class="summary-chip"><i class="fas fa-shuttle-van"></i> 接駁車到飯店</span>
-            <span class="summary-chip"><i class="fas fa-bed"></i> 住宿：LAX 機場飯店</span>
-          </div>
+  <section id="intro" class="relative min-h-[78vh] w-full overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80"
+      alt="海岸公路與山景的日落風光" loading="lazy"
+      class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 hero-mask"></div>
+    <div class="absolute inset-0 pattern-bg opacity-70"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 py-16 md:py-24 text-white">
+      <div class="max-w-2xl">
+        <p class="text-xs uppercase tracking-[0.45em] text-white/80">Los Angeles & Las Vegas</p>
+        <h1 class="mt-4 font-serif text-4xl sm:text-5xl md:text-6xl leading-tight">2026 美西旅遊手冊</h1>
+        <p class="mt-4 text-base sm:text-lg text-white/85">11 天 10 夜，從洛杉磯海岸線到拉斯維加斯霓虹，融合自然、城市與奢華度假的沉浸式路線。</p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a
+            class="min-h-[44px] min-w-[44px] px-6 inline-flex items-center justify-center rounded-full bg-gold text-deep font-semibold shadow-soft hover:brightness-95 transition"
+            href="#itinerary">
+            探索行程
+          </a>
+          <a
+            class="min-h-[44px] min-w-[44px] px-6 inline-flex items-center justify-center rounded-full border border-white/60 text-white font-semibold hover:bg-white/10 transition"
+            href="#spots">
+            精選景點
+          </a>
         </div>
+      </div>
+      <div class="mt-10 grid gap-4 sm:grid-cols-3">
+        <div class="glass rounded-3xl px-5 py-4">
+          <p class="text-xs uppercase tracking-[0.3em]">旅程天數</p>
+          <p class="mt-2 text-xl font-semibold">11 天 10 夜</p>
+        </div>
+        <div class="glass rounded-3xl px-5 py-4">
+          <p class="text-xs uppercase tracking-[0.3em]">城市節奏</p>
+          <p class="mt-2 text-xl font-semibold">海岸 × 霓虹 × 峽谷</p>
+        </div>
+        <div class="glass rounded-3xl px-5 py-4">
+          <p class="text-xs uppercase tracking-[0.3em]">旅行季節</p>
+          <p class="mt-2 text-xl font-semibold">2026 / 04 / 02 - 04 / 12</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-6">
-          <div>
-            <p class="text-label">Travel Booklet</p>
-            <h2 class="text-h2 text-strong">旅程章節導覽</h2>
-            <p class="text-body-sm text-muted mt-1">依天數快速切換，像翻閱精緻旅遊手冊。</p>
-          </div>
-          <div class="tab-bar-wrapper">
-            <div class="tab-bar" role="tablist" aria-label="行程天數">
-              <button class="tab-button btn btn-soft btn-tab active" type="button" data-tab="all">全部</button>
-              <button class="tab-button btn btn-soft btn-tab" type="button" data-tab="day1">Day 1</button>
-              <button class="tab-button btn btn-soft btn-tab" type="button" data-tab="day2">Day 2</button>
-              <button class="tab-button btn btn-soft btn-tab" type="button" data-tab="day3">Day 3</button>
-              <button class="tab-button btn btn-soft btn-tab" type="button" data-tab="day4">Day 4</button>
-              <button class="tab-button btn btn-soft btn-tab" type="button" data-tab="day5">Day 5</button>
-              <button class="tab-button btn btn-soft btn-tab" type="button" data-tab="day6">Day 6</button>
-              <button class="tab-button btn btn-soft btn-tab" type="button" data-tab="day7">Day 7</button>
-              <button class="tab-button btn btn-soft btn-tab" type="button" data-tab="day8">Day 8</button>
-              <button class="tab-button btn btn-soft btn-tab" type="button" data-tab="day9">Day 9</button>
-              <button class="tab-button btn btn-soft btn-tab" type="button" data-tab="day10">Day 10</button>
-              <button class="tab-button btn btn-soft btn-tab" type="button" data-tab="day11">Day 11</button>
+  <main class="max-w-6xl mx-auto px-6 py-14 space-y-16">
+    <section id="highlights" class="space-y-8">
+      <div class="reveal">
+        <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Highlights</p>
+        <h2 class="mt-3 font-serif text-3xl text-deep">旅程亮點概覽</h2>
+        <p class="mt-3 text-slate-600 max-w-2xl">以雜誌式的節奏安排城市漫遊、自然奇景與高端娛樂，讓每一天都有主題、每一站都像翻到新章節。</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="reveal rounded-3xl bg-white/80 p-6 card-shadow">
+          <div class="flex items-center gap-3">
+            <span class="h-12 w-12 rounded-2xl bg-mist text-sea inline-flex items-center justify-center">
+              <i class="fa-solid fa-water"></i>
+            </span>
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Coastline</p>
+              <h3 class="font-serif text-xl text-deep">海岸慢旅</h3>
             </div>
           </div>
-        </div>
-
-        <div class="relative space-y-6">
-      <div class="timeline-line hidden md:block"></div>
-
-      <div class="relative pl-0 md:pl-12 day-card" data-days="day1">
-        <div
-          class="md:absolute left-0 top-2 w-10 h-10 bg-gray-700 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
-          1</div>
-        <div class="card card-interactive border-l-4 border-gray-600">
-          <div class="flex flex-wrap justify-between items-center gap-2">
-            <span class="text-body-sm font-bold text-muted">Day 1 • 4/2 (四)</span>
-            <span class="info-tag"><i class="fas fa-bed"></i> 住宿：LAX 機場飯店</span>
-          </div>
-          <h3 class="text-h2 text-strong mt-2">抵達洛杉磯</h3>
-          <div class="summary-grid mt-3">
-            <span class="summary-chip"><i class="fas fa-plane-arrival"></i> 抵達 LAX</span>
-            <span class="summary-chip"><i class="fas fa-shuttle-van"></i> 接駁車到飯店</span>
-            <span class="summary-chip"><i class="fas fa-bed"></i> 機場飯店入住</span>
-          </div>
-          <details class="day-details">
-            <summary>展開詳細行程</summary>
-            <ul class="mt-3 text-body-sm text-muted space-y-2">
-              <li><span class="info-tag"><i class="fas fa-clock"></i> 20:45</span> 抵達 LAX 機場。</li>
-              <li><span class="info-tag"><i class="fas fa-shuttle-van"></i> 交通</span> 搭乘飯店接駁車 (Shuttle) 前往飯店。本日不租車。</li>
-            </ul>
-          </details>
-          <a class="map-button btn btn-primary" href="https://maps.google.com/?q=LAX+Airport" target="_blank" rel="noreferrer">
-            <i class="fas fa-map-marked-alt"></i> 今日地圖
-          </a>
-        </div>
-      </div>
-
-      <div class="relative pl-0 md:pl-12 day-card" data-days="day2">
-        <div
-          class="md:absolute left-0 top-2 w-10 h-10 bg-blue-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
-          2</div>
-        <div class="card card-interactive border-l-4 border-blue-600">
-          <span class="text-body-sm font-bold text-muted">Day 2 • 4/3 (五)</span>
-          <h3 class="text-h2 text-strong mt-1">飛往拉斯維加斯</h3>
-          <div class="summary-grid mt-3">
-            <span class="summary-chip"><i class="fas fa-plane"></i> 早班機 LAS</span>
-            <span class="summary-chip"><i class="fas fa-car"></i> Uber 到飯店</span>
-            <span class="summary-chip"><i class="fas fa-map-marker-alt"></i> 賭城大道</span>
-            <span class="summary-chip"><i class="fas fa-ticket-alt"></i> "O" Show</span>
-          </div>
-          <details class="day-details">
-            <summary>展開詳細行程</summary>
-            <ul class="mt-3 text-body-sm text-muted space-y-2">
-              <li><span class="info-tag"><i class="fas fa-plane"></i> 上午</span> 推薦搭乘 <strong>Southwest (西南航空)</strong> 09:00 - 10:30 航班。</li>
-              <li class="text-xs text-blue-600 bg-blue-50 py-1 rounded px-2">💡 <strong>Tip:</strong>
-                Southwest 提供每人 2 件免費託運行李，最適合長途旅客。</li>
-              <li><span class="info-tag"><i class="fas fa-car"></i> 交通</span> 抵達後搭乘 Uber 前往飯店。</li>
-              <li><span class="info-tag"><i class="fas fa-map-marker-alt"></i> 行程</span> 賭城大道南段 (MGM, New York New York)。</li>
-              <li><span class="info-tag"><i class="fas fa-ticket-alt"></i> 票券</span> 太陽馬戲團 "O" Show。</li>
-            </ul>
-          </details>
-          <a class="map-button btn btn-primary" href="https://maps.google.com/?q=Las+Vegas+Strip" target="_blank" rel="noreferrer">
-            <i class="fas fa-map-marked-alt"></i> 今日地圖
-          </a>
-        </div>
-      </div>
-
-      <div class="relative pl-0 md:pl-12 mt-6 day-card" data-days="day3">
-        <div
-          class="md:absolute left-0 top-2 w-10 h-10 bg-purple-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
-          3</div>
-        <div class="card card-interactive border-l-4 border-purple-600">
-          <span class="text-body-sm font-bold text-muted">Day 3 • 4/4 (六)</span>
-          <h3 class="text-h2 text-strong mt-1">拉斯維加斯：市區自由行</h3>
-          <div class="summary-grid mt-3">
-            <span class="summary-chip"><i class="fas fa-map"></i> 市區觀光</span>
-            <span class="summary-chip"><i class="fas fa-building"></i> The Sphere</span>
-            <span class="summary-chip"><i class="fas fa-dice"></i> 博物館/賭場</span>
-          </div>
-          <details class="day-details">
-            <summary>展開詳細行程</summary>
-            <p class="text-body-sm text-muted mt-2">本日為週六，安排市區觀光。</p>
-            <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4 text-body-sm text-muted">
-              <div class="bg-gray-50 p-3 rounded"><strong>景點：</strong> The Sphere (球體建築)、威尼斯人 (The Venetian)。</div>
-              <div class="bg-gray-50 p-3 rounded"><strong>體驗：</strong> 可口可樂博物館、賭場體驗。</div>
+          <p class="mt-4 text-slate-600">Santa Monica、Venice Beach 與日落黃金時刻，安排最舒適的海岸節奏。</p>
+        </article>
+        <article class="reveal rounded-3xl bg-white/80 p-6 card-shadow">
+          <div class="flex items-center gap-3">
+            <span class="h-12 w-12 rounded-2xl bg-mist text-sea inline-flex items-center justify-center">
+              <i class="fa-solid fa-mountain"></i>
+            </span>
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Nature</p>
+              <h3 class="font-serif text-xl text-deep">峽谷奇景</h3>
             </div>
-          </details>
-          <a class="map-button btn btn-primary" href="https://maps.google.com/?q=The+Sphere+Las+Vegas" target="_blank" rel="noreferrer">
-            <i class="fas fa-map-marked-alt"></i> 今日地圖
-          </a>
-        </div>
-      </div>
-
-      <div class="relative pl-0 md:pl-12 mt-6 day-card" data-days="day4">
-        <div
-          class="md:absolute left-0 top-2 w-10 h-10 bg-orange-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
-          <i class="fas fa-bus"></i></div>
-        <div class="card card-interactive border-l-4 border-orange-500">
-          <span class="text-body-sm font-bold text-muted">Day 4 • 4/5(日)</span>
-          <h3 class="text-h2 text-strong mt-1">大峽谷 2 日遊：南緣篇</h3>
-          <div class="summary-grid mt-3">
-            <span class="summary-chip"><i class="fas fa-bus"></i> 旅行團接送</span>
-            <span class="summary-chip"><i class="fas fa-mountain"></i> 南緣/胡佛水壩</span>
-            <span class="summary-chip"><i class="fas fa-bed"></i> 夜宿 Page</span>
           </div>
-          <details class="day-details">
-            <summary>展開詳細行程</summary>
-            <p class="text-body-sm text-muted mt-2">旅行社：KKday / MaxTour</p>
-            <div class="mt-4 space-y-4">
-              <div class="border-l-2 border-orange-200 pl-3">
-                <strong class="block text-strong">重點路線</strong>
-                <p class="text-body-sm text-muted">飯店接送 → 胡佛水壩 → 66號公路 → 大峽谷國家公園 → 夜宿 Page。</p>
-              </div>
+          <p class="mt-4 text-slate-600">大峽谷南緣、羚羊谷與馬蹄灣，從日出到星空都不錯過。</p>
+        </article>
+        <article class="reveal rounded-3xl bg-white/80 p-6 card-shadow">
+          <div class="flex items-center gap-3">
+            <span class="h-12 w-12 rounded-2xl bg-mist text-sea inline-flex items-center justify-center">
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">City Lights</p>
+              <h3 class="font-serif text-xl text-deep">霓虹盛宴</h3>
             </div>
-          </details>
-          <a class="map-button btn btn-primary" href="https://maps.google.com/?q=Grand+Canyon+South+Rim" target="_blank" rel="noreferrer">
-            <i class="fas fa-map-marked-alt"></i> 今日地圖
-          </a>
-        </div>
-      </div>
-
-      <div class="relative pl-0 md:pl-12 mt-6 day-card" data-days="day5">
-        <div
-          class="md:absolute left-0 top-2 w-10 h-10 bg-orange-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
-          <i class="fas fa-camera-retro"></i></div>
-        <div class="card card-interactive border-l-4 border-orange-500">
-          <span class="text-body-sm font-bold text-muted">Day 5 • 4/6(一)</span>
-          <h3 class="text-h2 text-strong mt-1">大峽谷 2 日遊：羚羊谷篇</h3>
-          <div class="summary-grid mt-3">
-            <span class="summary-chip"><i class="fas fa-water"></i> 馬蹄灣</span>
-            <span class="summary-chip"><i class="fas fa-camera-retro"></i> 羚羊谷導覽</span>
-            <span class="summary-chip"><i class="fas fa-car"></i> 返回賭城</span>
           </div>
-          <details class="day-details">
-            <summary>展開詳細行程</summary>
-            <p class="text-body-sm text-muted mt-2">行程亮點：峽谷線條與夢幻光影。</p>
-            <div class="mt-4 space-y-4">
-              <div class="border-l-2 border-orange-200 pl-3">
-                <strong class="block text-strong">重點路線</strong>
-                <p class="text-body-sm text-muted">馬蹄灣 → 下羚羊谷導覽 → 返回拉斯維加斯 (約 19:00 抵達)。</p>
-              </div>
+          <p class="mt-4 text-slate-600">拉斯維加斯夜間表演、賭城大道夜景與球體建築，感受不夜城魅力。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="spots" class="space-y-8">
+      <div class="reveal">
+        <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Featured Spots</p>
+        <h2 class="mt-3 font-serif text-3xl text-deep">精選景點卡片</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <article class="reveal overflow-hidden rounded-3xl bg-white card-shadow">
+          <img
+            src="https://source.unsplash.com/900x600/?santa+monica,pier,beach"
+            alt="Santa Monica 海灘夕陽" loading="lazy" class="h-48 w-full object-cover" />
+          <div class="p-6">
+            <span class="text-xs uppercase tracking-[0.3em] text-slate-400">Los Angeles</span>
+            <h3 class="mt-2 font-serif text-xl text-deep">Santa Monica</h3>
+            <p class="mt-3 text-slate-600">海岸步道與摩天輪夜景，最適合傍晚散步與輕鬆晚餐。</p>
+            <a class="mt-4 inline-flex min-h-[44px] px-4 items-center justify-center rounded-full border border-dune text-deep hover:border-sea transition" href="https://maps.google.com/?q=Santa+Monica+Pier" target="_blank" rel="noreferrer">查看地圖</a>
+          </div>
+        </article>
+        <article class="reveal overflow-hidden rounded-3xl bg-white card-shadow">
+          <img
+            src="https://source.unsplash.com/900x600/?las+vegas,strip,night"
+            alt="拉斯維加斯夜景" loading="lazy" class="h-48 w-full object-cover" />
+          <div class="p-6">
+            <span class="text-xs uppercase tracking-[0.3em] text-slate-400">Las Vegas</span>
+            <h3 class="mt-2 font-serif text-xl text-deep">The Strip 夜光</h3>
+            <p class="mt-3 text-slate-600">主街夜遊、飯店秀與燈光地標，一次感受奢華度假氛圍。</p>
+            <a class="mt-4 inline-flex min-h-[44px] px-4 items-center justify-center rounded-full border border-dune text-deep hover:border-sea transition" href="https://maps.google.com/?q=Las+Vegas+Strip" target="_blank" rel="noreferrer">查看地圖</a>
+          </div>
+        </article>
+        <article class="reveal overflow-hidden rounded-3xl bg-white card-shadow">
+          <img
+            src="https://source.unsplash.com/900x600/?grand+canyon"
+            alt="大峽谷自然景觀" loading="lazy" class="h-48 w-full object-cover" />
+          <div class="p-6">
+            <span class="text-xs uppercase tracking-[0.3em] text-slate-400">Grand Canyon</span>
+            <h3 class="mt-2 font-serif text-xl text-deep">大峽谷南緣</h3>
+            <p class="mt-3 text-slate-600">世界級峽谷的壯闊視野，安排日出與夜空星座觀賞。</p>
+            <a class="mt-4 inline-flex min-h-[44px] px-4 items-center justify-center rounded-full border border-dune text-deep hover:border-sea transition" href="https://maps.google.com/?q=Grand+Canyon+South+Rim" target="_blank" rel="noreferrer">查看地圖</a>
+          </div>
+        </article>
+        <article class="reveal overflow-hidden rounded-3xl bg-white card-shadow">
+          <img
+            src="https://source.unsplash.com/900x600/?antelope+canyon,slot+canyon"
+            alt="羚羊谷峽谷光影" loading="lazy" class="h-48 w-full object-cover" />
+          <div class="p-6">
+            <span class="text-xs uppercase tracking-[0.3em] text-slate-400">Antelope Canyon</span>
+            <h3 class="mt-2 font-serif text-xl text-deep">羚羊谷光影</h3>
+            <p class="mt-3 text-slate-600">導覽團必訪的波浪岩壁，推薦中午光束時段拍攝。</p>
+            <a class="mt-4 inline-flex min-h-[44px] px-4 items-center justify-center rounded-full border border-dune text-deep hover:border-sea transition" href="https://maps.google.com/?q=Antelope+Canyon" target="_blank" rel="noreferrer">查看地圖</a>
+          </div>
+        </article>
+        <article class="reveal overflow-hidden rounded-3xl bg-white card-shadow">
+          <img
+            src="https://source.unsplash.com/900x600/?hollywood,sign,los+angeles"
+            alt="好萊塢標誌" loading="lazy" class="h-48 w-full object-cover" />
+          <div class="p-6">
+            <span class="text-xs uppercase tracking-[0.3em] text-slate-400">Hollywood</span>
+            <h3 class="mt-2 font-serif text-xl text-deep">好萊塢經典</h3>
+            <p class="mt-3 text-slate-600">星光大道、Hollywood Sign 與復古街區散步。</p>
+            <a class="mt-4 inline-flex min-h-[44px] px-4 items-center justify-center rounded-full border border-dune text-deep hover:border-sea transition" href="https://maps.google.com/?q=Hollywood+Walk+of+Fame" target="_blank" rel="noreferrer">查看地圖</a>
+          </div>
+        </article>
+        <article class="reveal overflow-hidden rounded-3xl bg-white card-shadow">
+          <img
+            src="https://source.unsplash.com/900x600/?griffith+observatory,night"
+            alt="城市天文台夜景" loading="lazy" class="h-48 w-full object-cover" />
+          <div class="p-6">
+            <span class="text-xs uppercase tracking-[0.3em] text-slate-400">Night View</span>
+            <h3 class="mt-2 font-serif text-xl text-deep">Griffith 夜景</h3>
+            <p class="mt-3 text-slate-600">洛杉磯最美夜景之一，推薦傍晚到達卡位。</p>
+            <a class="mt-4 inline-flex min-h-[44px] px-4 items-center justify-center rounded-full border border-dune text-deep hover:border-sea transition" href="https://maps.google.com/?q=Griffith+Observatory" target="_blank" rel="noreferrer">查看地圖</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="itinerary" class="space-y-8">
+      <div class="reveal">
+        <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Daily Chapters</p>
+        <h2 class="mt-3 font-serif text-3xl text-deep">每日章節</h2>
+        <p class="mt-3 text-slate-600 max-w-2xl">每一天像一章，從抵達、城市探索到自然壯景。建議依節奏安排行李與交通。</p>
+      </div>
+      <div class="space-y-10">
+        <div class="reveal space-y-4" data-day="day1">
+          <div class="notion-card day-summary" role="button" tabindex="0">
+            <div class="summary-label">Day 1 · 4/2</div>
+            <div class="summary-title">抵達洛杉磯</div>
+            <div class="summary-text">抵達 LAX，機場飯店休息。</div>
+          </div>
+          <div class="day-header hidden flex items-start justify-between rounded-2xl bg-white/80 px-5 py-4 card-shadow">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Day 1 · 4/2</p>
+              <h3 class="mt-2 font-serif text-xl text-deep">抵達洛杉磯</h3>
             </div>
-          </details>
-          <a class="map-button btn btn-primary" href="https://maps.google.com/?q=Antelope+Canyon" target="_blank" rel="noreferrer">
-            <i class="fas fa-map-marked-alt"></i> 今日地圖
-          </a>
-        </div>
-      </div>
-
-      <div class="relative pl-0 md:pl-12 mt-6 day-card" data-days="day6">
-        <div
-          class="md:absolute left-0 top-2 w-10 h-10 bg-blue-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
-          6</div>
-        <div class="card card-interactive border-l-4 border-blue-600">
-          <span class="text-body-sm font-bold text-muted">Day 6 • 4/7 (二)</span>
-          <h3 class="text-h2 text-strong mt-1">飛回洛杉磯</h3>
-          <div class="summary-grid mt-3">
-            <span class="summary-chip"><i class="fas fa-plane"></i> 早班機返 LAX</span>
-            <span class="summary-chip"><i class="fas fa-key"></i> 機場取車</span>
-            <span class="summary-chip"><i class="fas fa-city"></i> 市中心觀光</span>
-            <span class="summary-chip"><i class="fas fa-star"></i> 天文台夜景</span>
+            <span class="inline-flex items-center rounded-full bg-mist px-3 py-1 text-xs text-sea">LAX</span>
           </div>
-          <details class="day-details">
-            <summary>展開詳細行程</summary>
-            <ul class="mt-3 text-body-sm text-muted space-y-2">
-              <li><span class="info-tag"><i class="fas fa-plane"></i> 上午</span> 搭早班機 LAS → LAX。</li>
-              <li><span class="info-tag"><i class="fas fa-key"></i> 租車</span> 於 LAX 機場取車 (開始租車)。</li>
-              <li><span class="info-tag"><i class="fas fa-city"></i> 下午</span> 洛杉磯市中心觀光 (Central
-                Market, Angels Flight)。</li>
-              <li><span class="info-tag"><i class="fas fa-star"></i> 晚上</span> Griffith Observatory
-                天文台夜景。</li>
-            </ul>
-          </details>
-          <a class="map-button btn btn-primary" href="https://maps.google.com/?q=Downtown+Los+Angeles" target="_blank" rel="noreferrer">
-            <i class="fas fa-map-marked-alt"></i> 今日地圖
-          </a>
-        </div>
-      </div>
-
-      <div class="relative pl-0 md:pl-12 mt-6 day-card" data-days="day7">
-        <div
-          class="md:absolute left-0 top-2 w-10 h-10 bg-gray-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
-          <i class="fas fa-map"></i></div>
-        <div class="card card-interactive border-l-4 border-gray-500">
-          <span class="text-body-sm font-bold text-muted">Day 7 • 4/8 (三)</span>
-          <h3 class="text-h2 text-strong mt-1">好萊塢環球影城</h3>
-          <div class="summary-grid mt-3">
-            <span class="summary-chip"><i class="fas fa-ticket-alt"></i> 全日票券</span>
-            <span class="summary-chip"><i class="fas fa-hat-wizard"></i> 哈利波特</span>
-            <span class="summary-chip"><i class="fas fa-gamepad"></i> 瑪利歐世界</span>
+          <div class="day-details hidden notion-list text-sm">
+            <div class="notion-card"><span>抵達 LAX，接駁車前往機場飯店。</span></div>
+            <div class="notion-card"><span>簡單整理行李，提早休息。</span></div>
           </div>
-          <details class="day-details">
-            <summary>展開詳細行程</summary>
-            <p class="text-body-sm text-muted mt-2">全日遊：瑪利歐世界、哈利波特等主題區。</p>
-          </details>
-          <a class="map-button btn btn-primary" href="https://maps.google.com/?q=Universal+Studios+Hollywood" target="_blank" rel="noreferrer">
-            <i class="fas fa-map-marked-alt"></i> 今日地圖
-          </a>
+          <a class="day-actions hidden inline-flex min-h-[44px] px-4 items-center justify-center rounded-full bg-sea text-white" href="https://maps.google.com/?q=LAX+Airport" target="_blank" rel="noreferrer">今日地圖</a>
         </div>
-      </div>
-
-      <div class="relative pl-0 md:pl-12 mt-6 day-card" data-days="day8">
-        <div
-          class="md:absolute left-0 top-2 w-10 h-10 bg-red-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
-          8</div>
-        <div class="card card-interactive border-l-4 border-red-500">
-          <span class="text-body-sm font-bold text-muted">Day 8 • 4/9 (四)</span>
-          <h3 class="text-h2 text-strong mt-1">極限體驗與海岸放鬆</h3>
-          <div class="summary-grid mt-3">
-            <span class="summary-chip"><i class="fas fa-parachute-box"></i> 高空跳傘</span>
-            <span class="summary-chip"><i class="fas fa-umbrella-beach"></i> Santa Monica</span>
-            <span class="summary-chip"><i class="fas fa-water"></i> Venice Beach</span>
+        <div class="reveal space-y-4" data-day="day2">
+          <div class="notion-card day-summary" role="button" tabindex="0">
+            <div class="summary-label">Day 2 · 4/3</div>
+            <div class="summary-title">飛往拉斯維加斯</div>
+            <div class="summary-text">飛往賭城入住，夜賞賭城夜景或秀。</div>
           </div>
-          <details class="day-details">
-            <summary>展開詳細行程</summary>
-            <ul class="mt-3 text-body-sm text-muted space-y-2">
-              <li><span class="info-tag"><i class="fas fa-sun"></i> 上午</span> Camarillo 高空跳傘 (Skydive Coastal California)。</li>
-              <li><span class="info-tag"><i class="fas fa-cloud-sun"></i> 下午</span> Santa Monica Pier &amp; Venice Beach 放鬆壓驚。</li>
-            </ul>
-          </details>
-          <a class="map-button btn btn-primary" href="https://maps.google.com/?q=Santa+Monica+Pier" target="_blank" rel="noreferrer">
-            <i class="fas fa-map-marked-alt"></i> 今日地圖
-          </a>
-        </div>
-      </div>
-
-      <div class="relative pl-0 md:pl-12 mt-6 day-card" data-days="day9">
-        <div
-          class="md:absolute left-0 top-2 w-10 h-10 bg-blue-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
-          9</div>
-        <div class="card card-interactive border-l-4 border-blue-500">
-          <span class="text-body-sm font-bold text-muted">Day 9 • 4/10 (五)</span>
-          <h3 class="text-h2 text-strong mt-1">藝文名流巡禮</h3>
-          <div class="summary-grid mt-3">
-            <span class="summary-chip"><i class="fas fa-landmark"></i> Getty Center</span>
-            <span class="summary-chip"><i class="fas fa-star"></i> Beverly Hills</span>
-            <span class="summary-chip"><i class="fas fa-palette"></i> LACMA</span>
-          </div>
-          <details class="day-details">
-            <summary>展開詳細行程</summary>
-            <p class="text-body-sm text-muted mt-2">Getty Center、Beverly Hills &amp; LACMA 藝術散策。</p>
-          </details>
-          <a class="map-button btn btn-primary" href="https://maps.google.com/?q=Getty+Center" target="_blank" rel="noreferrer">
-            <i class="fas fa-map-marked-alt"></i> 今日地圖
-          </a>
-        </div>
-      </div>
-
-      <div class="relative pl-0 md:pl-12 mt-6 day-card" data-days="day10">
-        <div
-          class="md:absolute left-0 top-2 w-10 h-10 bg-indigo-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
-          10</div>
-        <div class="card card-interactive border-l-4 border-indigo-500">
-          <span class="text-body-sm font-bold text-muted">Day 10 • 4/11 (六)</span>
-          <h3 class="text-h2 text-strong mt-1">好萊塢經典巡禮</h3>
-          <div class="summary-grid mt-3">
-            <span class="summary-chip"><i class="fas fa-mountain"></i> Hollywood Sign</span>
-            <span class="summary-chip"><i class="fas fa-star"></i> 星光大道</span>
-            <span class="summary-chip"><i class="fas fa-shopping-bag"></i> 伴手禮採購</span>
-          </div>
-          <details class="day-details">
-            <summary>展開詳細行程</summary>
-            <p class="text-body-sm text-muted mt-2">Hollywood Sign、星光大道、採購伴手禮。</p>
-          </details>
-          <a class="map-button btn btn-primary" href="https://maps.google.com/?q=Hollywood+Walk+of+Fame" target="_blank" rel="noreferrer">
-            <i class="fas fa-map-marked-alt"></i> 今日地圖
-          </a>
-        </div>
-      </div>
-
-      <div class="relative pl-0 md:pl-12 mt-6 day-card" data-days="day11">
-        <div
-          class="md:absolute left-0 top-2 w-10 h-10 bg-yellow-500 rounded-full border-4 border-white flex items-center justify-center text-white font-bold z-10 hidden md:flex">
-          <i class="fas fa-basketball-ball"></i></div>
-        <div class="card card-interactive border-l-4 border-yellow-500">
-          <span class="text-body-sm font-bold text-muted">Day 11 • 4/12 (日)</span>
-          <h3 class="text-h2 text-strong mt-1">NBA 賽季最終戰 &amp; 賦歸</h3>
-          <div class="summary-grid mt-3">
-            <span class="summary-chip"><i class="fas fa-basketball-ball"></i> NBA 賽事</span>
-            <span class="summary-chip"><i class="fas fa-store"></i> 市區巡禮</span>
-            <span class="summary-chip"><i class="fas fa-plane-departure"></i> 晚上返程</span>
-          </div>
-          <details class="day-details">
-            <summary>展開詳細行程</summary>
-            <div class="mt-4 bg-gray-50 p-4 rounded border border-gray-200 text-center">
-              <h4 class="font-bold text-lg text-purple-700">LAKERS vs JAZZ</h4>
-              <p class="text-body-sm text-muted">Crypto.com Arena</p>
+          <div class="day-header hidden flex items-start justify-between rounded-2xl bg-white/80 px-5 py-4 card-shadow">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Day 2 · 4/3</p>
+              <h3 class="mt-2 font-serif text-xl text-deep">飛往拉斯維加斯</h3>
             </div>
-            <ul class="mt-4 text-body-sm text-muted space-y-2">
-              <li><span class="info-tag"><i class="fas fa-clock"></i> 11:00</span> 退房，行李上車。享用悠閒早午餐。</li>
-              <li><span class="info-tag"><i class="fas fa-map"></i> 13:00</span> 市區最後巡禮 (The Last Bookstore / Grand Central Market)。</li>
-              <li><span class="info-tag"><i class="fas fa-basketball-ball"></i> 17:30</span> NBA 觀賽 (預計 20:00 結束)。</li>
-              <li><span class="info-tag"><i class="fas fa-car"></i> 20:30</span> 賽後直接前往機場還車 (晚餐建議買 In-N-Out 外帶)。</li>
-              <li><span class="info-tag"><i class="fas fa-plane"></i> 21:30</span> 抵達航廈 Check-in。</li>
-            </ul>
-          </details>
-          <a class="map-button btn btn-primary" href="https://maps.google.com/?q=Crypto.com+Arena" target="_blank" rel="noreferrer">
-            <i class="fas fa-map-marked-alt"></i> 今日地圖
-          </a>
+            <span class="inline-flex items-center rounded-full bg-mist px-3 py-1 text-xs text-sea">Vegas</span>
+          </div>
+          <div class="day-details hidden notion-list text-sm">
+            <div class="notion-card"><span>早班機抵達 LAS，入住飯店。</span></div>
+            <div class="notion-card"><span>夜晚欣賞 "O" Show 或賭城夜景。</span></div>
+          </div>
+          <a class="day-actions hidden inline-flex min-h-[44px] px-4 items-center justify-center rounded-full bg-sea text-white" href="https://maps.google.com/?q=Las+Vegas+Strip" target="_blank" rel="noreferrer">今日地圖</a>
         </div>
-      </div>
+        <div class="reveal space-y-4" data-day="day3">
+          <div class="notion-card day-summary" role="button" tabindex="0">
+            <div class="summary-label">Day 3 · 4/4</div>
+            <div class="summary-title">Vegas City Walk</div>
+            <div class="summary-text">The Sphere、威尼斯人與主街夜景。</div>
+          </div>
+          <div class="day-header hidden flex items-start justify-between rounded-2xl bg-white/80 px-5 py-4 card-shadow">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Day 3 · 4/4</p>
+              <h3 class="mt-2 font-serif text-xl text-deep">Vegas City Walk</h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-mist px-3 py-1 text-xs text-sea">Sphere</span>
+          </div>
+          <div class="day-details hidden notion-list text-sm">
+            <div class="notion-card"><span>The Sphere、威尼斯人、主街探索。</span></div>
+            <div class="notion-card"><span>夜晚主街夜景與燈光秀。</span></div>
+          </div>
+        </div>
+        <div class="reveal space-y-4" data-day="day4">
+          <div class="notion-card day-summary" role="button" tabindex="0">
+            <div class="summary-label">Day 4 · 4/5</div>
+            <div class="summary-title">大峽谷南緣</div>
+            <div class="summary-text">胡佛水壩、66 號公路，晚間抵達 Page。</div>
+          </div>
+          <div class="day-header hidden flex items-start justify-between rounded-2xl bg-white/80 px-5 py-4 card-shadow">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Day 4 · 4/5</p>
+              <h3 class="mt-2 font-serif text-xl text-deep">大峽谷南緣</h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-mist px-3 py-1 text-xs text-sea">Tour</span>
+          </div>
+          <div class="day-details hidden notion-list text-sm">
+            <div class="notion-card"><span>旅行團出發，胡佛水壩與 66 號公路。</span></div>
+            <div class="notion-card"><span>傍晚抵達 Page 休息。</span></div>
+          </div>
+        </div>
+        <div class="reveal space-y-4" data-day="day5">
+          <div class="notion-card day-summary" role="button" tabindex="0">
+            <div class="summary-label">Day 5 · 4/6</div>
+            <div class="summary-title">羚羊谷 & 馬蹄灣</div>
+            <div class="summary-text">羚羊谷導覽、馬蹄灣觀景，傍晚回拉斯維加斯。</div>
+          </div>
+          <div class="day-header hidden flex items-start justify-between rounded-2xl bg-white/80 px-5 py-4 card-shadow">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Day 5 · 4/6</p>
+              <h3 class="mt-2 font-serif text-xl text-deep">羚羊谷 & 馬蹄灣</h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-mist px-3 py-1 text-xs text-sea">Canyon</span>
+          </div>
+          <div class="day-details hidden notion-list text-sm">
+            <div class="notion-card"><span>羚羊谷導覽拍攝。</span></div>
+            <div class="notion-card"><span>馬蹄灣觀景。</span></div>
+            <div class="notion-card"><span>傍晚返回拉斯維加斯。</span></div>
+          </div>
+        </div>
+        <div class="reveal space-y-4" data-day="day6">
+          <div class="notion-card day-summary" role="button" tabindex="0">
+            <div class="summary-label">Day 6 · 4/7</div>
+            <div class="summary-title">好萊塢 × Griffith 夜景</div>
+            <div class="summary-text">Hollywood Blvd、星光大道、Griffith 夜景。</div>
+          </div>
+          <div class="day-header hidden flex items-start justify-between rounded-2xl bg-white/80 px-5 py-4 card-shadow">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Day 6 · 4/7</p>
+              <h3 class="mt-2 font-serif text-xl text-deep">好萊塢 × Griffith 夜景</h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-mist px-3 py-1 text-xs text-sea">LA</span>
+          </div>
+          <div class="day-details hidden notion-list text-sm">
+            <div class="notion-card"><span>早上｜回到 LAX 放行李，前往 Hollywood Blvd。</span></div>
+            <div class="notion-card"><span>下午｜星光大道、TCL Chinese Theatre 周邊散步。</span></div>
+            <div class="notion-card"><span>晚上｜Griffith Observatory 看夕陽夜景。</span></div>
+          </div>
+        </div>
+        <div class="reveal space-y-4" data-day="day7">
+          <div class="notion-card day-summary" role="button" tabindex="0">
+            <div class="summary-label">Day 7 · 4/8</div>
+            <div class="summary-title">Getty Center × 海岸散步</div>
+            <div class="summary-text">Getty Center 藝術館＋Santa Monica、Venice 海岸。</div>
+          </div>
+          <div class="day-header hidden flex items-start justify-between rounded-2xl bg-white/80 px-5 py-4 card-shadow">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Day 7 · 4/8</p>
+              <h3 class="mt-2 font-serif text-xl text-deep">Getty Center × 海岸散步</h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-mist px-3 py-1 text-xs text-sea">Museum</span>
+          </div>
+          <div class="day-details hidden notion-list text-sm">
+            <div class="notion-card"><span>上午｜Getty Center 藝術館與花園。</span></div>
+            <div class="notion-card"><span>下午｜Santa Monica + Venice Beach 海岸散步。</span></div>
+            <div class="notion-card"><span>日落｜碼頭夜景與海岸線。</span></div>
+          </div>
+        </div>
+        <div class="reveal space-y-4" data-day="day8">
+          <div class="notion-card day-summary" role="button" tabindex="0">
+            <div class="summary-label">Day 8 · 4/9</div>
+            <div class="summary-title">影視博物館日</div>
+            <div class="summary-text">Academy Museum、LACMA + Urban Light，夜景點收尾。</div>
+          </div>
+          <div class="day-header hidden flex items-start justify-between rounded-2xl bg-white/80 px-5 py-4 card-shadow">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Day 8 · 4/9</p>
+              <h3 class="mt-2 font-serif text-xl text-deep">影視博物館日</h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-mist px-3 py-1 text-xs text-sea">Cinema</span>
+          </div>
+          <div class="day-details hidden notion-list text-sm">
+            <div class="notion-card"><span>上午｜Academy Museum 影視展區。</span></div>
+            <div class="notion-card"><span>下午｜LACMA + Urban Light 拍照。</span></div>
+            <div class="notion-card"><span>晚上｜Baldwin Hills Scenic Overlook 夜景。</span></div>
+          </div>
+        </div>
+        <div class="reveal space-y-4" data-day="day9">
+          <div class="notion-card day-summary" role="button" tabindex="0">
+            <div class="summary-label">Day 9 · 4/10</div>
+            <div class="summary-title">Huntington 花園日</div>
+            <div class="summary-text">Huntington 花園一日＋Old Town Pasadena。</div>
+          </div>
+          <div class="day-header hidden flex items-start justify-between rounded-2xl bg-white/80 px-5 py-4 card-shadow">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Day 9 · 4/10</p>
+              <h3 class="mt-2 font-serif text-xl text-deep">Huntington 花園日</h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-mist px-3 py-1 text-xs text-sea">Garden</span>
+          </div>
+          <div class="day-details hidden notion-list text-sm">
+            <div class="notion-card"><span>全天｜Huntington Library & Gardens。</span></div>
+            <div class="notion-card"><span>傍晚｜Old Town Pasadena 散步放鬆。</span></div>
+          </div>
+        </div>
+        <div class="reveal space-y-4" data-day="day10">
+          <div class="notion-card day-summary" role="button" tabindex="0">
+            <div class="summary-label">Day 10 · 4/11</div>
+            <div class="summary-title">Warner Bros 影城巡禮</div>
+            <div class="summary-text">Warner Bros Tour、Burbank/NoHo 或 The Broad，夜景收尾。</div>
+          </div>
+          <div class="day-header hidden flex items-start justify-between rounded-2xl bg-white/80 px-5 py-4 card-shadow">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Day 10 · 4/11</p>
+              <h3 class="mt-2 font-serif text-xl text-deep">Warner Bros 影城巡禮</h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-mist px-3 py-1 text-xs text-sea">Studio</span>
+          </div>
+          <div class="day-details hidden notion-list text-sm">
+            <div class="notion-card"><span>上午｜Warner Bros Studio Tour（約 3 小時）。</span></div>
+            <div class="notion-card"><span>下午｜Burbank/NoHo 或 The Broad（擇一）。</span></div>
+            <div class="notion-card"><span>晚上｜最後一晚夜景收尾（Griffith 或海邊）。</span></div>
+          </div>
+        </div>
+        <div class="reveal space-y-4" data-day="day11">
+          <div class="notion-card day-summary" role="button" tabindex="0">
+            <div class="summary-label">Day 11 · 4/12</div>
+            <div class="summary-title">返程日（機上）</div>
+            <div class="summary-text">退房前往機場，返程。</div>
+          </div>
+          <div class="day-header hidden flex items-start justify-between rounded-2xl bg-white/80 px-5 py-4 card-shadow">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Day 11 · 4/12</p>
+              <h3 class="mt-2 font-serif text-xl text-deep">返程日（機上）</h3>
+            </div>
+            <span class="inline-flex items-center rounded-full bg-mist px-3 py-1 text-xs text-sea">Finale</span>
+          </div>
+          <div class="day-details hidden notion-list text-sm">
+            <div class="notion-card"><span>早上｜退房前往機場。</span></div>
+            <div class="notion-card"><span>飛機上休息，準備返程。</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer class="mt-12 text-center text-body-sm text-muted pb-6">
-      <p>2026 美西旅遊行程</p>
-    </footer>
   </main>
+
+  <footer class="bg-deep text-white">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <p class="text-xs uppercase tracking-[0.4em] text-white/60">2026 Travel Brochure</p>
+          <p class="mt-2 font-serif text-2xl">美西旅遊手冊</p>
+        </div>
+        <div class="flex gap-3">
+          <a class="min-h-[44px] min-w-[44px] px-5 inline-flex items-center justify-center rounded-full border border-white/40 text-white hover:bg-white/10 transition" href="#intro">回到封面</a>
+          <a class="min-h-[44px] min-w-[44px] px-5 inline-flex items-center justify-center rounded-full bg-gold text-deep font-semibold" href="#itinerary">查看行程</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
+    <div class="flex items-center gap-2 rounded-full bg-white/90 backdrop-blur px-3 py-2 shadow-soft border border-white/70">
+      <a class="h-11 w-11 rounded-full bg-mist text-sea inline-flex items-center justify-center" href="#intro" aria-label="回到封面">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <a class="h-11 w-11 rounded-full bg-mist text-sea inline-flex items-center justify-center" href="#highlights" aria-label="旅程亮點">
+        <i class="fa-solid fa-star"></i>
+      </a>
+      <a class="h-11 w-11 rounded-full bg-mist text-sea inline-flex items-center justify-center" href="#spots" aria-label="精選景點">
+        <i class="fa-solid fa-camera"></i>
+      </a>
+      <a class="h-11 w-11 rounded-full bg-mist text-sea inline-flex items-center justify-center" href="#itinerary" aria-label="每日章節">
+        <i class="fa-solid fa-list"></i>
+      </a>
+    </div>
+  </nav>
+
   <script>
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const dayCards = document.querySelectorAll('.day-card');
-    const themeToggle = document.querySelector('#themeToggle');
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
 
-    const applyTheme = (mode) => {
-      document.body.classList.toggle('theme-dark', mode === 'dark');
-      if (themeToggle) {
-        themeToggle.setAttribute('aria-pressed', mode === 'dark');
-        themeToggle.innerHTML = mode === 'dark'
-          ? '<i class="fas fa-sun"></i> 日間模式'
-          : '<i class="fas fa-moon"></i> 夜間模式';
+    reveals.forEach((el) => observer.observe(el));
+
+    const daySections = document.querySelectorAll('#itinerary [data-day]');
+
+    daySections.forEach((section) => {
+      const summary = section.querySelector('.day-summary');
+      const details = section.querySelector('.day-details');
+      const actions = section.querySelector('.day-actions');
+      if (!summary) return;
+
+      if (details) {
+        const detailsId = `day-details-${section.dataset.day}`;
+        details.id = detailsId;
+        summary.setAttribute('aria-controls', detailsId);
       }
-      localStorage.setItem('theme', mode);
-    };
+      summary.setAttribute('aria-expanded', 'false');
 
-    const setActiveTab = (targetTab) => {
-      tabButtons.forEach((button) => {
-        button.classList.toggle('active', button.dataset.tab === targetTab);
-      });
+      const toggleExpanded = () => {
+        const isExpanded = section.classList.toggle('is-expanded');
+        summary.setAttribute('aria-expanded', String(isExpanded));
+        if (details) details.classList.toggle('hidden', !isExpanded);
+        if (actions) actions.classList.toggle('hidden', !isExpanded);
+      };
 
-      dayCards.forEach((card) => {
-        const days = card.dataset.days?.split(' ') || [];
-        const shouldShow = targetTab === 'all' || days.includes(targetTab);
-        card.style.display = shouldShow ? 'block' : 'none';
-        if (shouldShow) {
-          card.style.animation = 'none';
-          card.offsetHeight;
-          card.style.animation = '';
+      summary.addEventListener('click', toggleExpanded);
+      summary.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleExpanded();
         }
       });
-
-      if (targetTab !== 'all') {
-        const targetCard = document.querySelector(`.day-card[data-days="${targetTab}"]`);
-        targetCard?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    };
-
-    tabButtons.forEach((button) => {
-      button.addEventListener('click', () => setActiveTab(button.dataset.tab));
     });
-
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        const isDark = document.body.classList.contains('theme-dark');
-        applyTheme(isDark ? 'light' : 'dark');
-      });
-    }
-
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      applyTheme(savedTheme);
-    }
   </script>
 </body>
 
